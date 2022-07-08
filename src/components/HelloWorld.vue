@@ -17,8 +17,8 @@
 
     <button type="button" @click="count++">count is: {{ count }}</button>
     <button type="button" @click="gotoLogin">跳转登录</button>
-    <button type="button" @click="localize(Locale.zh_CN)">{{ localeMessage.SIMPLIFIED_CHINESE }}</button>
-    <button type="button" @click="localize(Locale.en_US)">{{ localeMessage.ENGLISH }}</button>
+    <button type="button" @click="localize(Locale.zh_CN)">{{ localeMessage.value.SIMPLIFIED_CHINESE }}</button>
+    <button type="button" @click="localize(Locale.en_US)">{{ localeMessage.value.ENGLISH }}</button>
     <a-pagination :total="50" show-size-changer />
     <div class="site-config-provider-calendar-wrapper">
       <a-calendar :fullscreen="false" />
@@ -40,8 +40,7 @@ let gotoLogin = () => {
   router.push("/sign-in");
 };
 const locale = localeStore();
-// console.log(localeMessage);
-const { localize, localeMessage } = toRefs(locale);
+const { localize } = toRefs(locale);
 const count = ref(0);
 </script>
 

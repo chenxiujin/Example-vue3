@@ -10,10 +10,6 @@ interface LocaleState {
   localeMessage: LocaleMessage;
 }
 
-// const localeMessageKey: InjectionKey<LocaleMessage> = Symbol("locale-message");
-
-// const localeMessage = inject(localeMessageKey);
-
 const localeStore = defineStore("locale", {
   state: (): LocaleState => ({
     antDesignVueLocale: AntDesignVueLocale.get(DEFAULT_LOCALE),
@@ -29,5 +25,4 @@ const localeStore = defineStore("locale", {
   }
 });
 
-// const { localeMessage } = toRefs(localeStore());
 export { localeStore };
